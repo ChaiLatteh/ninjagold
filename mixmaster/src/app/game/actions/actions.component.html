@@ -1,0 +1,13 @@
+<div *ngIf="timer">
+</div>
+<div>
+  <h4 *ngIf="user">Welcome {{user.username}}! Your gold: {{user.gold}}</h4>
+  <button (click)="hunt();">Hunt</button>
+  <div class="map_wrapper">
+    <button *ngFor="let map of map_list" (click)="startHunt(user)">{{map.name}}</button>
+  </div>
+  <button type="button" name="button">Mix</button>
+  <button type="button" name="button">Cores</button>
+  <br>
+  <button (click)="back();">Back</button>
+</div>

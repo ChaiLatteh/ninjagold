@@ -1,0 +1,13 @@
+div{
+  max-height:300px;
+  overflow-y:auto;
+  text-align:center;
+}
+button{
+  display:table;
+  width:80%;
+  margin:10px auto;
+}
+.map_wrapper button{
+  width:50%;
+}

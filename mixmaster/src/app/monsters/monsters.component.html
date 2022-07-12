@@ -1,0 +1,34 @@
+<button (click)="getMonsters()">get monster list</button>
+<h1>List of Monsters</h1>
+<div *ngIf="monsters">
+  <div *ngFor="let monster of monsters">
+    <h4>
+      {{monster.name}}
+      <br>
+      LV{{monster.level}}
+      <br>
+      {{monster.type}}
+      <br>
+      {{monster._id}}
+    </h4>
+    <button (click)="deleteMonster(monster._id)">Delete this monster</button>
+  </div>
+  <button (click)="deleteAllMonsters()">Wipe out monsters data</button>
+</div>
+
+<h1>add new monster</h1>
+<form (submit)="addMonster(formData)" #formData="ngForm">
+  <div>
+    <label for="name">Name: </label>
+    <input type="text" name="name" ngModel #name="ngModel">
+  </div>
+    <div>
+      <label for="level">Level: </label>
+      <input type="text" name="level" ngModel #level="ngModel">
+    </div>
+    <div>
+      <label for="type">Type: </label>
+      <input type="text" name="type" ngModel #type="ngModel">
+    </div>
+    <input type="submit" value="Add Monster">
+</form>

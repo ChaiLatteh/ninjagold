@@ -1,0 +1,16 @@
+form{
+  border: 2px solid blue;
+  padding:10px;
+  display:table;
+}
+div h2{
+  margin:5px auto;
+}
+form div{
+  padding: 5px;
+  color:red;
+}
+label{
+  display:table;
+  margin-bottom:10px;
+}

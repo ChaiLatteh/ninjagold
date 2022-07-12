@@ -1,0 +1,11 @@
+<div id="login">
+  <h2>Log In</h2>
+  <form (submit)="login(formData)" #formData="ngForm">
+    <label>Username: <input type="text" name="username" required minlength="4" ngModel #username="ngModel"></label>
+    <label>Password: <input type="password" name="password" required minlength="4" ngModel #password="ngModel"></label>
+    <input [disabled]="!username.valid || !password.valid" type="submit" value="Log In">
+  </form>
+</div>
+<div *ngIf="user">
+  <h1>{{user.username}}</h1>
+</div>
