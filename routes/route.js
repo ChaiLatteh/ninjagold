@@ -51,7 +51,6 @@ router.post('/login', (req, res, next)=>{
         }
         else if(isMatch==true){
           req.session.user = user;
-          console.log(req.session.user);
           return res.json(user);
         }
         else if(isMatch==false){
@@ -63,7 +62,6 @@ router.post('/login', (req, res, next)=>{
 });
 
 router.get('/current', (req, res, next)=>{
-  console.log(req.session.user);
   if(!req.session.user){
     return res.json("No user in session.");
   }
@@ -77,13 +75,11 @@ router.get('/current', (req, res, next)=>{
 
 router.get('/update', (req, res, next)=>{
   if(req.session.user){
-    console.log(req.session.user);
     return res.json(req.session.user);
   }
 })
 
 router.post('/mine', (req, res, next)=>{
-  console.log(req.session.user);
   if(req.session.user){
     User.findOne({username: req.session.user.username}, (err, user)=>{
       if(err){
@@ -128,10 +124,12 @@ router.post('/upgrade', (req, res, next)=>{
         user.gold=user.gold-300;
         user.pickaxe="gold";
       }
-      else if(user.pickaxe=="gold"){
+      else if(user.pickaxe=="gold" && user.gold>=400){
+        user.gold=user.gold-400;
         user.pickaxe="platinum";
       }
-      else if(user.pickaxe=="platinum"){
+      else if(user.pickaxe=="platinum" && user.gold>=500){
+        user.gold=user.gold-500;
         user.pickaxe="diamond";
       }
       else{

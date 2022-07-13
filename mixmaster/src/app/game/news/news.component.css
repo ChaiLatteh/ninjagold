@@ -1,6 +1,6 @@
-button{
-  padding:5px 20px;
-  margin: 0px 50px;
+h3{
+  margin:auto;
+  font-size:24px;
 }
 ul{
   font-size:20px;
@@ -14,13 +14,13 @@ li{
 }
 
 @media screen and (max-width:767px){
-  *{
-    background-color:skyblue;
-  }
   ul{
     text-align:center;
+    margin:auto;
   }
   li{
+    border:initial;
+    margin:10px auto auto auto;
     text-align:left;
   }
 }

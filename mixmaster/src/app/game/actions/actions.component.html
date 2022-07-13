@@ -12,9 +12,7 @@
   <br>
   <button [disabled]="user.gold<100" *ngIf="user.pickaxe=='bronze'" (click)="upgrade('bronze');">Upgrade to silver pickaxe for 100g</button>
   <button [disabled]="user.gold<300" *ngIf="user.pickaxe=='silver'" (click)="upgrade('silver');">Upgrade gold pickaxe for 300g</button>
-  <button [disabled]="user.gold<500" *ngIf="user.pickaxe=='gold'" (click)="upgrade('gold')">Upgrade to platinum pickaxe for 500g</button>
-  <button disabled *ngIf="user.pickaxe=='platinum'">Your pickaxe is at highest tier</button>
-
-  <button (click)="reset()">RESET</button>
-
+  <button [disabled]="user.gold<500" *ngIf="user.pickaxe=='gold'" (click)="upgrade('gold')">Upgrade to platinum pickaxe for 400g</button>
+  <button [disabled]="user.gold<500" *ngIf="user.pickaxe=='platinum'" (click)="upgrade('platinum')">Upgrade to Diamond pickaxe for 500g</button>
+  <button disabled *ngIf="user.pickaxe=='diamond'">Your pickaxe is at highest tier</button>
 </div>

@@ -7,11 +7,16 @@ table, th, td{
   border-collapse:collapse;
   padding:5px;
   text-align:center;
-  /* width:30%; */
 }
 table{
   margin:auto;
 }
 th{
   background-color:silver;
+}
+
+@media screen and (max-width:767px){
+  h1{
+    font-size:24px;
+  }
 }

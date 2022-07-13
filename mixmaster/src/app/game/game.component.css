@@ -34,4 +34,7 @@ button{
     height:initial;
     max-height:300px;
   }
+  #news{
+    border:1px solid black;
+  }
 }
