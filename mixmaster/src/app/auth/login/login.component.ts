@@ -20,9 +20,7 @@ export class LoginComponent implements OnInit {
     private router: Router,
   ) { }
 
-  ngOnInit(): void {
-    this.getCurrentUser();
-  }
+  ngOnInit(): void {}
 
   login(formData:any){
     this.authService.login(formData.value).subscribe((data) => {
@@ -44,7 +42,6 @@ export class LoginComponent implements OnInit {
 
   getCurrentUser(){
     this.authService.getCurrentUser().subscribe((data)=>{
-      console.log(data);
       if(typeof data=="object"){
         this.router.navigate(['/game']);
       }

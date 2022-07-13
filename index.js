@@ -27,7 +27,7 @@ var sessionConfig = {
 // })
 
 //connect to mongodb
-mongoose.connect('mongodb://localhost:27017/mixmaster');
+mongoose.connect('mongodb://localhost:27017/ninjagold');
 
 //onconnection
 mongoose.connection.on('connected', ()=>{
@@ -49,8 +49,6 @@ app.use(cors({origin:[
 
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
-
-app.use(express.static(path.join(__dirname, 'mixmaster', 'src')));
 
 app.use('/api', route);
 

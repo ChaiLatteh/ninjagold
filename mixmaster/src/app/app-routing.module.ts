@@ -5,13 +5,11 @@ import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { GameComponent } from './game/game.component';
 import { ActionsComponent } from './game/actions/actions.component';
-import { StatusComponent } from './game/status/status.component';
+import { NewsComponent } from './game/news/news.component';
 
-import { MonstersComponent } from './monsters/monsters.component';
 
 const routes: Routes = [
   {path:'', component: AuthComponent},
-  {path:'monsters', component: MonstersComponent},
   {path:'game', component: GameComponent},
   // {path:'', redirectTo:'login', pathMatch: 'full'},
   // {path:'register', component: RegisterComponent},

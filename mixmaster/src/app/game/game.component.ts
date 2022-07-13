@@ -28,7 +28,6 @@ export class GameComponent implements OnInit {
     this.authService.getCurrentUser().subscribe(data=>{
       if(typeof data=="object"){
         this.user = data;
-        console.log(this.user);
       }
       else{
         this.router.navigate(['/']);
@@ -42,7 +41,6 @@ export class GameComponent implements OnInit {
     this.gameService.updateCurrentUser().subscribe(data=>{
       if(typeof data=="object"){
         this.user = data;
-        console.log(this.user);
       }
     })
   }
@@ -53,7 +51,6 @@ export class GameComponent implements OnInit {
         console.log("couldn't log out " + data);
       }
       else{
-        console.log(data);
         this.router.navigate(['/'])
       }
     })

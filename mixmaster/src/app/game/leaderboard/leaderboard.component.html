@@ -4,12 +4,16 @@
     <tr>
       <th>Rank</th>
       <th>Username</th>
+      <th>Name</th>
       <th>Gold</th>
+      <th>Total Clicks</th>
     </tr>
     <tr *ngFor="let user of users">
       <td>{{users.indexOf(user)+1}}</td>
       <td>{{user.username}}</td>
+      <td>{{user.firstname}} {{user.lastname}}</td>
       <td>{{user.gold}}</td>
+      <td>{{user.clicks}}</td>
     </tr>
   </table>
 </div>

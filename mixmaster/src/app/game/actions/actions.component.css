@@ -1,13 +1,22 @@
 div{
-  max-height:300px;
+  max-height:500px;
   overflow-y:auto;
   text-align:center;
+}
+img{
+  cursor:pointer;
+  width:100px;
+  height:auto;
+}
+.ninja{
+  width:150px;
 }
 button{
   display:table;
   width:80%;
+  max-width:400px;
   margin:10px auto;
 }
-.map_wrapper button{
-  width:50%;
+h3{
+  
 }

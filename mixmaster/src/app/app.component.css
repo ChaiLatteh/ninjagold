@@ -1,0 +1,27 @@
+h1{
+  color:gold;
+  font-size:48px;
+  vertical-align:top;
+  display:inline-block;
+}
+img{
+  height:100px;
+  width:100px;
+}
+
+
+@media screen and (max-width:767px){
+  h1{
+    font-size:32px;
+  }
+  img{
+    height:50px;
+    width:auto;
+  }
+}
+
+@media screen and (max-width:519px){
+  h1{
+    font-size:24px;
+  }
+}

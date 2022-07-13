@@ -1,0 +1,26 @@
+button{
+  padding:5px 20px;
+  margin: 0px 50px;
+}
+ul{
+  font-size:20px;
+  text-align:left;
+  font-weight:bold;
+}
+li{
+  font-size:initial;
+  font-weight:initial;
+  margin:10px 0px;
+}
+
+@media screen and (max-width:767px){
+  *{
+    background-color:skyblue;
+  }
+  ul{
+    text-align:center;
+  }
+  li{
+    text-align:left;
+  }
+}

@@ -8,10 +8,8 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./actions.component.css']
 })
 export class ActionsComponent implements OnInit {
-  map_list: any;
   test:any;
   user:any;
-  timer:any;
   constructor(
     private gameService: GameService,
     private authService: AuthService,
@@ -23,19 +21,16 @@ export class ActionsComponent implements OnInit {
         this.user = data;
       }
     })
+
+
   }
 
-  hunt(){
-    this.gameService.getMaps().subscribe((data)=>{
+  mine(user=this.user){
+    this.gameService.mine(user).subscribe((data)=>{
       if(typeof data=="object"){
-        this.map_list = data;
+        this.user = data;
       }
     })
-  }
-  startHunt(user:any){
-    this.gameService.gold(user).subscribe((data)=>{
-      this.user = data;
-    });
   }
   updateCurrentUser(){
     this.gameService.updateCurrentUser().subscribe(data=>{
@@ -44,10 +39,45 @@ export class ActionsComponent implements OnInit {
       }
     })
   }
-
-
-  back(){
-    location.reload();
+  upgrade(tier:string){
+    this.gameService.upgrade(tier).subscribe(data=>{
+      if(typeof data=="object"){
+        this.user = data;
+      }
+      else{
+        alert(data);
+      }
+    })
   }
+  reset(user=this.user){
+    this.gameService.reset(user).subscribe((data)=>{
+      if(typeof data=="object"){
+        this.user = data;
+      }
+    })
+  }
+
+  playSound(){
+    if (this.user.clicks%3==0){
+      this.ninjaSound();
+    }
+    else if (this.user.clicks%3==1){
+      this.pickSound();
+    }
+  }
+
+  ninjaSound(){
+    let ninjasound = new Audio();
+    ninjasound.src="/assets/ninjasound.wav";
+    ninjasound.load();
+    ninjasound.play();
+  }
+  pickSound(){
+    let picksound = new Audio();
+    picksound.src="/assets/picksound.wav";
+    picksound.load();
+    picksound.play();
+  }
+
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { GameService } from '../services/game.service';
 import { User } from '../models/user';
 import { Router } from '@angular/router'
 
@@ -9,19 +10,23 @@ import { Router } from '@angular/router'
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
-  users: any = [];
+  users:any;
   user:any;
 
   constructor(
     private authService: AuthService,
+    private gameService: GameService,
     private router: Router,
   ) { }
 
   ngOnInit(): void {
-    // this.getCurrentUser();
+    this.getCurrentUser();
+    setInterval(()=>{
+      this.getAllUsers();
+    }, 1000)
   }
-  getUsers(){
-    this.authService.getUsers().subscribe(users => {
+  getAllUsers(){
+    this.gameService.getAllUsers().subscribe(users => {
       this.users = users;
     })
   }

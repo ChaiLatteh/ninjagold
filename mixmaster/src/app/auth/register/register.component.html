@@ -4,10 +4,13 @@
 <div id="register">
   <h2>Register</h2>
   <form (submit)="register(formData)" #formData="ngForm">
-    <label>Username: <input type="text" name="username" required minlength="4" ngModel #username="ngModel"></label>
+    <label>First Name: <input type="text" name="firstname" required minlength="1" ngModel #firstname="ngModel"></label>
+    <label>Last Name: <input type="text" name="lastname" required minlength="1" ngModel #lastname="ngModel"></label>
+    <p *ngIf="!firstname.valid || !lastname.valid">Name fields may not be empty</p>
+    <label>Username: <input type="text" name="username" required minlength="4" required maxlength="20" ngModel #username="ngModel"></label>
     <label>Password: <input type="password" name="password" required minlength="4" ngModel #password="ngModel"></label>
-    <div *ngIf="!username.valid">Username must be at least 4 characters long</div>
-    <div *ngIf="!password.valid">Password must be at least 4 characters long</div>
+    <p *ngIf="!username.valid">Username must be at least 4 characters long</p>
+    <p *ngIf="!password.valid">Password must be at least 4 characters long</p>
     <input [disabled]="!username.valid || !password.valid" type="submit" value="Register!">
   </form>
 </div>

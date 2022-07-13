@@ -1,13 +1,20 @@
-<div *ngIf="timer">
-</div>
-<div>
+<head>
+  <link rel="prefetch" href="/assets/img/ninja1.png">
+  <link rel="prefetch" href="/assets/img/ninja2.png">
+  <link rel="prefetch" href="/assets/img/ninja3.png">
+</head>
+<div *ngIf="user">
   <h4 *ngIf="user">Welcome {{user.username}}! Your gold: {{user.gold}}</h4>
-  <button (click)="hunt();">Hunt</button>
-  <div class="map_wrapper">
-    <button *ngFor="let map of map_list" (click)="startHunt(user)">{{map.name}}</button>
-  </div>
-  <button type="button" name="button">Mix</button>
-  <button type="button" name="button">Cores</button>
+  <div (click)="mine();" (click)="playSound()" style="user-select:none;display:inline-block;cursor:pointer;"><img src="/assets/img/pickaxe.png" style="pointer-events:none;"><br><h3>↑ CLICK</h3></div>
+  <img class="ninja" *ngIf="user.clicks%3==0" src="/assets/img/ninja1.png">
+  <img class="ninja" *ngIf="user.clicks%3==1" src="/assets/img/ninja2.png">
+  <img class="ninja" *ngIf="user.clicks%3==2" src="/assets/img/ninja3.png">
   <br>
-  <button (click)="back();">Back</button>
+  <button [disabled]="user.gold<100" *ngIf="user.pickaxe=='bronze'" (click)="upgrade('bronze');">Upgrade to silver pickaxe for 100g</button>
+  <button [disabled]="user.gold<300" *ngIf="user.pickaxe=='silver'" (click)="upgrade('silver');">Upgrade gold pickaxe for 300g</button>
+  <button [disabled]="user.gold<500" *ngIf="user.pickaxe=='gold'" (click)="upgrade('gold')">Upgrade to platinum pickaxe for 500g</button>
+  <button disabled *ngIf="user.pickaxe=='platinum'">Your pickaxe is at highest tier</button>
+
+  <button (click)="reset()">RESET</button>
+
 </div>

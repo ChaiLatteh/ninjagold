@@ -1,7 +1,12 @@
 button{
   display:table;
 }
-#actions, #status{
+#logout{
+  text-align:center;
+  margin:auto;
+}
+#actions, #news{
+  height:300px;
   text-align:center;
   display:inline-table;
   width:50%;
@@ -10,11 +15,23 @@ button{
   margin:auto;
   text-align:center;
 }
-#status{
-  background-color:yellow;
-  vertical-align:bottom;
-}
 #leaderboard{
   width:100%;
   display:table;
+}
+@media screen and (min-width:1200px){
+  #actions{
+    width:70%;
+  }
+  #news{
+    width:30%;
+  }
+}
+
+@media screen and (max-width:767px){
+  #actions, #news{
+    width:100%;
+    height:initial;
+    max-height:300px;
+  }
 }

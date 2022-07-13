@@ -10,8 +10,7 @@ import { RegisterComponent } from './auth/register/register.component';
 import { LoginComponent } from './auth/login/login.component';
 import { GameComponent } from './game/game.component';
 import { ActionsComponent } from './game/actions/actions.component';
-import { StatusComponent } from './game/status/status.component';
-import { MonstersComponent } from './monsters/monsters.component';
+import { NewsComponent } from './game/news/news.component';
 import { LeaderboardComponent } from './game/leaderboard/leaderboard.component';
 
 @NgModule({
@@ -22,8 +21,7 @@ import { LeaderboardComponent } from './game/leaderboard/leaderboard.component';
     LoginComponent,
     GameComponent,
     ActionsComponent,
-    StatusComponent,
-    MonstersComponent,
+    NewsComponent,
     LeaderboardComponent,
   ],
   imports: [
